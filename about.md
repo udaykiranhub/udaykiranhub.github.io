@@ -10,6 +10,6 @@ I participate in competitive security audits on Code4rena, Cantina, Immunefi, an
 
 I also build software, mainly with Solidity and the MERN stack. You can find my projects on [GitHub](https://github.com/udaykiranhub).
 
-This blog is my research notebook. The [Research Log](/research-log/) contains short, dated notes on what I'm reading and testing, while [Write-ups](/writeups/) contains longer articles.
+This blog is my research notebook, where I publish my [write-ups](/writeups/).
 
 You can reach me at [peddaudaykiran1@gmail.com](mailto:peddaudaykiran1@gmail.com), by phone at [+91 6305355185](tel:+916305355185), or on [X](https://x.com/Udaykir03362466) and [LinkedIn](https://www.linkedin.com/in/uday-kiran-pedda-65aa73271).

@@ -9,7 +9,7 @@ Create one file, `_posts/YYYY-MM-DD-short-title.md`:
 ```markdown
 ---
 title: "Title of the post"
-category: writeup   # writeup -> Write-ups, log -> Research Log
+category: writeup
 tags: [defi, oracle]
 ---
 
@@ -27,7 +27,7 @@ Commit and push to `main`. GitHub rebuilds the site in a minute or two, and the 
 | Path | What it is |
 |---|---|
 | `_posts/` | Posts (content) |
-| `index.md`, `research-log.md`, `writeups.md`, `about.md` | Pages (content) |
+| `index.md`, `writeups.md`, `audits.html`, `about.md` | Pages (content) |
 | `_config.yml` | Title, profile links, navigation, permalink format |
 | `_layouts/`, `_includes/`, `assets/css/main.css` | Templates and styling |
 
