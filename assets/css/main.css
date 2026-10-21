@@ -138,20 +138,7 @@ table { display: block; max-width: 100%; overflow-x: auto; border-collapse: coll
 th, td { padding: 0.4rem 0.75rem; border: 1px solid var(--border); text-align: left; vertical-align: top; }
 th { background: var(--code-bg); }
 
-/* Audits page: search box and results table. Rows become labelled cards on phones. */
-
-.audit-search { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
-.audit-search input {
-  flex: 1 1 14rem;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
-}
-.audit-search[hidden],
-.audit-table tr[hidden] { display: none; }
+/* Audits page results table. Rows become labelled cards on phones. */
 
 .audit-table { font-size: 0.875rem; }
 .audit-table small { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.8125rem; line-height: 1.4; }
