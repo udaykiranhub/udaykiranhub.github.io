@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header">
+    <h1>{{ page.title | escape }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- if page.last_modified_at %}
+      · updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%Y-%m-%d" }}</time>
+      {%- endif %}
+      {%- if page.categories.first %}
+      {%- assign section = site.pages | where: "list_category", page.categories.first | first %}
+      {%- if section %}
+      · <a href="{{ section.url | relative_url }}">{{ section.title | escape }}</a>
+      {%- endif %}
+      {%- endif %}
+    </p>
+    {%- if page.tags.size > 0 %}
+    <p class="meta">Tags: {{ page.tags | join: ", " | escape }}</p>
+    {%- endif %}
+  </header>
+
+  {{ content }}
+</article>
+
+<p class="meta"><a href="{{ '/' | relative_url }}">← All posts</a></p>

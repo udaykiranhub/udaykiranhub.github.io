@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- comment -%}
+  Page text followed by a list of posts, newest first.
+  Set `list_category` in a page's front matter to list only that category;
+  leave it out to list every post (the home page).
+{%- endcomment -%}
+{%- if page.title %}
+<h1>{{ page.title | escape }}</h1>
+{%- endif %}
+{{ content }}
+{%- if page.list_category %}
+{%- assign posts = site.categories[page.list_category] %}
+{%- include post-list.html posts=posts %}
+{%- else %}
+{%- include post-list.html posts=site.posts show_category=true %}
+{%- endif %}

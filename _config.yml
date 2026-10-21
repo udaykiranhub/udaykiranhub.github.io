@@ -1,0 +1,63 @@
+# Site configuration. Restart `jekyll serve` after editing this file.
+
+title: Uday Kiran Pedda
+description: >-
+  Web3 security research, smart contract vulnerability analysis,
+  DeFi protocol investigations, and technical write-ups.
+url: https://udaykiranhub.github.io
+baseurl: ""
+repository: udaykiranhub/udaykiranhub.github.io
+lang: en
+timezone: Asia/Kolkata
+
+author:
+  name: Uday Kiran Pedda
+
+# Shown in the footer and on the About page, in this order.
+# Add only accounts you own, for example:
+#   - name: X
+#     url: https://x.com/your-handle
+profile_links:
+  - name: GitHub
+    url: https://github.com/udaykiranhub
+
+# Top navigation, in order.
+navigation:
+  - title: Home
+    url: /
+  - title: Research Log
+    url: /research-log/
+  - title: Write-ups
+    url: /writeups/
+  - title: About
+    url: /about/
+
+# _posts/2026-10-20-some-title.md  ->  /2026/10/some-title/
+permalink: /:year/:month/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+markdown: kramdown
+kramdown:
+  input: GFM # fenced code blocks, tables
+  syntax_highlighter: rouge
+
+# No theme: every layout and stylesheet lives in this repository.
+theme: null
+
+# All three are on the GitHub Pages plugin allowlist.
+plugins:
+  - jekyll-feed     # /feed.xml
+  - jekyll-seo-tag  # <title>, description and Open Graph tags
+  - jekyll-sitemap  # /sitemap.xml and /robots.txt
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
