@@ -21,7 +21,6 @@ Commit and push to `main`. GitHub rebuilds the site in a minute or two, and the 
 - Revised a published post? Add `last_modified_at: YYYY-MM-DD` to its front matter.
 - Hide a post without deleting it: `published: false`.
 - Posts go through Liquid, so wrap code that contains `{{` or `{%` in `{% raw %}` … `{% endraw %}`.
-- `_posts/2026-10-20-post-template.md` demonstrates tables, highlighted code, diffs and footnotes. Copy it as a starting point.
 
 ## Where things live
 
