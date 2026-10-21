@@ -23,12 +23,12 @@
   </main>
 
   <footer class="site-footer">
-    <ul class="inline-list">
+    <p>
       {%- for link in site.profile_links %}
-      <li><a href="{{ link.url }}">{{ link.name | escape }}</a></li>
+      <a href="{{ link.url }}">{{ link.name | escape }}</a> ·
       {%- endfor %}
-      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-    </ul>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
   </footer>
 </body>
 </html>

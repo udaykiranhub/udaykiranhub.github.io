@@ -82,7 +82,7 @@ a { color: var(--link); text-underline-offset: 0.15em; }
   color: var(--muted);
   font-size: 0.9375rem;
 }
-.inline-list { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0; padding: 0; list-style: none; }
+.site-footer p { margin: 0; }
 
 /* Text */
 

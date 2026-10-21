@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm Uday Kiran Pedda, a smart-contract security researcher from India focused on Web3 and DeFi.
 
-I participate in public security audits on Code4rena, Cantina, Immunefi, and HackenProof. My results are listed on the [Audits](/audits/) page.
+I participate in competitive security audits on Code4rena, Cantina, Immunefi, and HackenProof. My results are listed on the [Audits](/audits/) page.
 
 I also build software, mainly with Solidity and the MERN stack. You can find my projects on [GitHub](https://github.com/udaykiranhub).
 
