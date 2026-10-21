@@ -138,6 +138,34 @@ table { display: block; max-width: 100%; overflow-x: auto; border-collapse: coll
 th, td { padding: 0.4rem 0.75rem; border: 1px solid var(--border); text-align: left; vertical-align: top; }
 th { background: var(--code-bg); }
 
+/* Audits page: search box and results table. Rows become labelled cards on phones. */
+
+.audit-search { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+.audit-search input {
+  flex: 1 1 14rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+.audit-search[hidden],
+.audit-table tr[hidden] { display: none; }
+
+.audit-table { font-size: 0.875rem; }
+.audit-table small { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.8125rem; line-height: 1.4; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 40rem) {
+  .audit-table, .audit-table tbody, .audit-table tr { display: block; }
+  .audit-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .audit-table tr { margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; }
+  .audit-table td { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; padding: 0.25rem 0; border: 0; }
+  .audit-table td::before { content: attr(data-label); color: var(--muted); }
+}
+
 /* Footnotes (kramdown renders them at the end of the post) */
 
 .footnotes { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9375rem; }

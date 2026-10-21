@@ -29,6 +29,8 @@ navigation:
     url: /research-log/
   - title: Write-ups
     url: /writeups/
+  - title: Audits
+    url: /audits/
   - title: About
     url: /about/
 

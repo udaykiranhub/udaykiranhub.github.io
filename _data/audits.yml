@@ -1,0 +1,159 @@
+# Results shown on /audits/, in display order: by platform, then protocol.
+#
+# Every value must come from a public source: a researcher profile, a contest
+# results leaderboard, or a published report. If a platform does not disclose
+# something, write "Not publicly disclosed", or leave `rank` empty to show "—".
+#
+#   platform, protocol, scope  protocol name, plus the contest or codebase name
+#   type                       protocol category, as described on the contest page
+#   severity, status           severity as judged by the platform, and whether the
+#                              result is valid / rewarded / paid / submitted / duplicate
+#   rank, rank_note            position on the contest results leaderboard / number
+#                              of entries on it, and how many share it or placed above
+#   link, link_text            the most precise public source
+
+# Cantina: ranks and severities from each contest leaderboard; finding counts
+# from https://cantina.xyz/u/udaykiranpedda/public-reviews/competitions
+
+- platform: Cantina
+  protocol: Kuru Labs
+  scope: kuru-contracts
+  type: DEX (on-chain order book)
+  severity: 1 High
+  status: Valid, rewarded. 2 further valid findings; severity not publicly attributed.
+  rank: "20 / 67"
+  rank_note: Shared by 9 · 30 above
+  link: https://cantina.xyz/competitions/cdce21ba-b787-4df4-9c56-b31d085388e7/leaderboard
+  link_text: Contest leaderboard
+
+- platform: Cantina
+  protocol: Octant
+  scope: octant-v2-core
+  type: Yield (funding vaults)
+  severity: Informational
+  status: Confirmed, unrewarded.
+  rank: ""
+  rank_note: Not on the contest leaderboard
+  link: https://cantina.xyz/u/udaykiranpedda
+  link_text: Inefficient Token Balance Validation in Reward Compounding (listed on profile)
+
+- platform: Cantina
+  protocol: Reserve Protocol
+  scope: Reserve Governor
+  type: Governance
+  severity: 2 Medium
+  status: Valid, rewarded. 1 further valid finding; severity not publicly attributed.
+  rank: "5 / 126"
+  rank_note: Shared by 9 · 20 above
+  link: https://cantina.xyz/competitions/980a5976-9a7d-4014-b2e1-c248b4c6fa44/leaderboard
+  link_text: Contest leaderboard
+
+- platform: Cantina
+  protocol: Revert Finance
+  scope: Revert Lend
+  type: DeFi Lending
+  severity: 1 Medium
+  status: Valid, rewarded.
+  rank: "4 / 59"
+  rank_note: Shared by 46 · 13 above
+  link: https://cantina.xyz/competitions/efb6f308-f13b-4110-aff8-0d67181608dd/leaderboard
+  link_text: Contest leaderboard
+
+- platform: Cantina
+  protocol: Revert Finance
+  scope: StableSwap Hooks
+  type: DEX (Uniswap v4 StableSwap hook)
+  severity: 1 High, 2 Medium
+  status: Valid, rewarded.
+  rank: "25 / 265"
+  rank_note: Shared by 2 · 27 above
+  link: https://cantina.xyz/competitions/e55ee7b9-6c99-42f8-8338-39f3dd134ef3/leaderboard
+  link_text: Contest leaderboard
+
+- platform: Cantina
+  protocol: Telcoin
+  scope: telcoin-network
+  type: Layer 1 blockchain
+  severity: Not publicly disclosed
+  status: 1 valid finding counted on profile, unrewarded.
+  rank: ""
+  rank_note: Not on the contest leaderboard
+  link: https://cantina.xyz/u/udaykiranpedda/public-reviews/competitions
+  link_text: Profile contest list
+
+# Code4rena: severities from https://code4rena.com/@udaykiranpedda and the
+# published reports; ranks from each audit's results leaderboard.
+
+- platform: Code4rena
+  protocol: Chainlink
+  scope: Payment Abstraction V2
+  type: Payments
+  severity: Medium
+  status: Valid, unrewarded. Finding not publicly disclosed.
+  rank: "11 / 129"
+  rank_note: Shared by 101 · 28 above
+  link: https://code4rena.com/audits/2026-03-chainlink-payment-abstraction-v2
+  link_text: Contest page (no public report)
+
+- platform: Code4rena
+  protocol: Intuition
+  type: InfoFi (knowledge network)
+  severity: Medium
+  status: Valid, rewarded · duplicate
+  rank: "4 / 43"
+  rank_note: Shared by 38 · 3 above
+  link: https://code4rena.com/reports/2026-03-intuition#m-02-epoch-boundary-checkpoints-retroactively-qualify-for-the-previous-epochs-rewards
+  link_text: "M-02: Epoch-boundary checkpoints retroactively qualify for the previous epoch’s rewards"
+
+- platform: Code4rena
+  protocol: Intuition
+  type: InfoFi (knowledge network)
+  severity: Low / Informational (QA report)
+  status: Submitted; listed in the report. Not counted as a valid finding.
+  rank: "4 / 43"
+  rank_note: Shared by 38 · 3 above
+  link: https://code4rena.com/reports/2026-03-intuition#low-risk-and-informational-issues
+  link_text: Report, Low Risk and Informational Issues
+
+- platform: Code4rena
+  protocol: Olas
+  type: AI agents (tokenomics, governance)
+  severity: High
+  status: Valid, rewarded · duplicate
+  rank: "38 / 202"
+  rank_note: 50 above
+  link: https://code4rena.com/reports/2026-01-olas#h-02-variable-overwrite-in-checkpoolandgetcenterprice-creates-dead-code-deviation-check-leaving-all-v3-protocol-owned-liquidity-operations-unprotected
+  link_text: "H-02: Variable Overwrite in checkPoolAndGetCenterPrice() Creates Dead-Code Deviation Check, Leaving All V3 Protocol-Owned Liquidity Operations Unprotected"
+
+- platform: Code4rena
+  protocol: Olas
+  type: AI agents (tokenomics, governance)
+  severity: High
+  status: Valid, rewarded · duplicate
+  rank: "38 / 202"
+  rank_note: 50 above
+  link: https://code4rena.com/reports/2026-01-olas#h-03-balancer-oracle-uses-vault-balances-as-price-and-can-be-steered-by-anyone
+  link_text: "H-03: Balancer oracle uses vault balances as price and can be steered by anyone"
+
+- platform: Code4rena
+  protocol: Olas
+  type: AI agents (tokenomics, governance)
+  severity: Medium
+  status: Valid, rewarded · duplicate
+  rank: "38 / 202"
+  rank_note: 50 above
+  link: https://code4rena.com/reports/2026-01-olas#m-12-balancer-oracle-deadlock-from-cumulative-price-weight
+  link_text: "M-12: Balancer oracle deadlock from cumulative price weight"
+
+# HackenProof: https://hackenproof.com/hackers/udaykiranpedda shows paid
+# reports by severity only; no report is publicly disclosed.
+
+- platform: HackenProof
+  protocol: Not publicly disclosed
+  type: Not publicly disclosed
+  severity: 1 High, 1 Medium
+  status: Paid bug bounty reports. Not publicly disclosed.
+  rank: ""
+  rank_note: Bug bounty, no contest
+  link: https://hackenproof.com/hackers/udaykiranpedda
+  link_text: HackenProof profile

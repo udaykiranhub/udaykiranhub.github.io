@@ -1,0 +1,76 @@
+---
+layout: page
+title: Audits
+permalink: /audits/
+---
+<p>Results from audit contests and bug bounty programs, taken from my public profiles and the platforms' published leaderboards and reports. Anything a platform does not disclose is marked as such.</p>
+
+<p class="meta">Profiles:
+  <a href="https://code4rena.com/@udaykiranpedda">Code4rena</a> ·
+  <a href="https://cantina.xyz/u/udaykiranpedda">Cantina</a> ·
+  <a href="https://hackenproof.com/hackers/udaykiranpedda">HackenProof</a>
+</p>
+
+<p class="audit-search" hidden>
+  <label for="audit-search">Search</label>
+  <input id="audit-search" type="search" placeholder="Platform, protocol, severity…" autocomplete="off">
+  <span id="audit-count" class="meta" aria-live="polite"></span>
+</p>
+
+<table class="audit-table">
+  <caption class="visually-hidden">Audit contest and bug bounty results, by platform and protocol</caption>
+  <thead>
+    <tr>
+      <th scope="col">Platform</th>
+      <th scope="col">Protocol</th>
+      <th scope="col">Protocol Type</th>
+      <th scope="col">Finding Severity</th>
+      <th scope="col">Contest Rank</th>
+      <th scope="col">Finding / Report Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for r in site.data.audits %}
+    <tr>
+      <td data-label="Platform"><div>{{ r.platform | escape }}</div></td>
+      <td data-label="Protocol"><div>{{ r.protocol | escape }}{% if r.scope %}<small>{{ r.scope | escape }}</small>{% endif %}</div></td>
+      <td data-label="Protocol Type"><div>{{ r.type | escape }}</div></td>
+      <td data-label="Finding Severity"><div>{{ r.severity | escape }}{% if r.status %}<small>{{ r.status | escape }}</small>{% endif %}</div></td>
+      <td data-label="Contest Rank"><div>{% if r.rank != "" %}{{ r.rank | escape }}{% else %}—{% endif %}{% if r.rank_note %}<small>{{ r.rank_note | escape }}</small>{% endif %}</div></td>
+      <td data-label="Finding / Report Link"><div><a href="{{ r.link }}">{{ r.link_text | escape }}</a></div></td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+
+<h2>Notes</h2>
+<ul>
+  <li><strong>Status.</strong> <em>Valid</em>: accepted by the platform's judging. <em>Rewarded</em>: received a payout. <em>Paid report</em>: bug bounty report paid by the program. <em>Submitted</em>: sent, but not counted as a valid finding. <em>Duplicate</em>: credited as "also found by" in the published report.</li>
+  <li><strong>Contest rank.</strong> Position on the contest's results leaderboard / number of entries on that leaderboard. Both platforms give equal results the same position, so each rank also shows how many entries share it and how many placed above.</li>
+  <li><strong>Cantina totals.</strong> The profile counts 12 valid findings (2 High, 6 Medium, 1 Low, 3 Informational) and 9 rejected. The leaderboards attribute the severities shown above; the remaining 1 Medium, 1 Low and 2 Informational belong to Kuru Labs, Reserve Governor and Telcoin, and Cantina does not show which.</li>
+</ul>
+<p class="meta">Last verified against the public sources linked above: 2026-10-21.</p>
+
+<script>
+  (function () {
+    var box = document.querySelector('.audit-search');
+    var input = document.getElementById('audit-search');
+    var count = document.getElementById('audit-count');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.audit-table tbody tr'));
+
+    function update() {
+      var terms = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      var shown = 0;
+      rows.forEach(function (row) {
+        var text = row.textContent.toLowerCase();
+        var match = terms.every(function (t) { return text.indexOf(t) !== -1; });
+        row.hidden = !match;
+        if (match) shown++;
+      });
+      count.textContent = terms.length ? shown + ' of ' + rows.length + ' records' : '';
+    }
+
+    input.addEventListener('input', update);
+    box.hidden = false;
+  })();
+</script>
